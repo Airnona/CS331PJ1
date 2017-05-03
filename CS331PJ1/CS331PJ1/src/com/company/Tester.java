@@ -37,7 +37,7 @@ public class Tester {
     MergeSort mSort = new MergeSort();
     InsertionSort iSort = new InsertionSort();
 
-    final double REPEAT = 20.0;     //How many times each sort will be tested for each array size
+    final double REPEAT = 100.0;     //How many times each sort will be tested for each array size
     private Random rand;
     private Double length;
 
@@ -57,14 +57,14 @@ public class Tester {
                 arr = new int[length.intValue()];               //makes array
 
 
-//                rand = new Random(100);                       //RANDOMIZED ARRAY
-//                for(int m = 0; m < length.intValue(); m++){     //assigns random values (seeded)
-//                    arr[m] = rand.nextInt() % 100;
-//                }
-
-                for(int m = 0; m < length.intValue(); m++){     //ORDERED ARRAY
-                    arr[m] = m-100;
+                rand = new Random(100);                       //RANDOMIZED ARRAY
+                for(int m = 0; m < length.intValue(); m++){     //assigns random values (seeded)
+                    arr[m] = rand.nextInt() % 100;
                 }
+
+//                for(int m = 0; m < length.intValue(); m++){     //ORDERED ARRAY
+//                    arr[m] = m-100;
+//                }
 
                 timeTester(i);                                 //calls sorts
             }
@@ -89,17 +89,17 @@ public class Tester {
 //            choose = 4;
 //        if(choose < 0 && choose > 199)
 //            choose = 200;
-        if(choose < 20 && choose > -1)
+        if(choose < 100 && choose > -1)
             choose = 0;
-        if(choose >19 && choose < 40)
+        if(choose >99 && choose < 200)
             choose = 1;
-        if(choose > 39 && choose < 60)
+        if(choose > 199 && choose < 300)
             choose = 2;
-        if(choose > 59 && choose < 80)
+        if(choose > 299 && choose < 400)
             choose = 3;
-        if(choose > 79 && choose < 100)
+        if(choose > 399 && choose < 500)
             choose = 4;
-        if(choose < 0 && choose > 99)
+        if(choose < 0 && choose > 499)
             choose = 200;
 
         switch (choose) {
